@@ -1,7 +1,6 @@
 const rp = require('request-promise');
-const config = require('../config.js');
-const CSE_ID = config.CSE_ID;
-const API_KEY = config.API_KEY;
+const CSE_ID = process.env.CSE_ID;
+const API_KEY = process.env.API_KEY;
 
 function parseResults(results) {
     // url, snippet, thumbnail, parent
