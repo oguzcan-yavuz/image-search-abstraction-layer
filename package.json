@@ -1,0 +1,39 @@
+{
+  "name": "image-search-abstraction-layer",
+  "version": "1.0.0",
+  "description": "freecodecamp image search abstraction layer project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yavuzovski/image-search-abstraction-layer.git"
+  },
+  "keywords": [
+    "freecodecamp",
+    "image",
+    "search",
+    "abstraction",
+    "layer"
+  ],
+  "author": "yavuzovski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yavuzovski/image-search-abstraction-layer/issues"
+  },
+  "homepage": "https://github.com/yavuzovski/image-search-abstraction-layer#readme",
+  "engines": {
+    "node": "9.11.1"
+  },
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "pug": "^2.0.3",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}
