@@ -1,4 +1,5 @@
 const rp = require('request-promise');
+const dbController = require('./dbController.js');
 const CSE_ID = process.env.CSE_ID;
 const API_KEY = process.env.API_KEY;
 
@@ -37,6 +38,10 @@ function getSearchResults(query, offset) {
 }
 
 module.exports = function(query, offset) {
+    dbController.insertSearchQuery(query, (err, data) => {
+        if(err) throw err;
+        console.log("insert:", data);
+    });
     return new Promise((resolve, reject) => {
         return resolve(getSearchResults(query, offset));
     });
