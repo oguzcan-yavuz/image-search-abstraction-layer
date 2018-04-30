@@ -1,0 +1,55 @@
+doctype html
+html(lang=en)
+    head
+        title Image Search Abstraction Layer
+        link(rel="stylesheet", type="text/css", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+        link(rel="stylesheet", type="text/css", href="/static/style.css")
+    body
+        div(class="container title")
+            h2 Image Search Abstraction Layer
+        div(class="container")
+            p
+                | Created by
+                a(href="https://www.freecodecamp.org/yavuzovski", target="_blank")  yavuzovski
+            ol(class="stories") User stories:
+                li.
+                    I can get the image URLs, alt text and page urls for a set of images relating to a given search string.
+                li.
+                    I can paginate through the responses by adding a ?offset=2 parameter to the URL.
+                li.
+                    I can get a list of the most recently submitted search strings.
+        div(class="container")
+            ul(class="examples") Searching:
+                br
+                code #{url}search/&lt;query&gt;?offset=&lt;offset_value&gt;
+                br
+                code #{url}search/lolcats funny?offset=10
+                li Output:
+                code.
+                    [
+                        {
+                            url: "https://i.ytimg.com/vi/dWpGC6Fg0io/hqdefault.jpg",
+                            snippet: "Jas Patrick sings Snow Day starring LOLCats Funny Cats - YouTube",
+                            thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNMCLSl2dHm87xTU6uMFZD0Jym2E-4lAaSdJzfc_6OkeB_CdF1vjgZZsR2",
+                            context: "https://www.youtube.com/watch?v=dWpGC6Fg0io"
+                        },{...},{...},{...},{...},{...},{...},{...},{...},{...} ]
+                br
+                br
+                li Displaying latest searches:
+                code #{url}latest/
+                li Output:
+                code.
+                    [
+                        {
+                            term: "lolcats funny",
+                            when: "2018-04-30T15:46:50.431Z"
+                        },{...},{...},{...},{...},{...},{...},{...},{...},{...} ]
+        div(class="container")
+            footer
+                h2 AROUND THE WEB
+                a.button(href='https://github.com/yavuzovski', target='_blank')
+                    img(src='http://sciactive.com/pnotify/includes/github-icon.png')
+                a.button(href='https://www.linkedin.com/in/oguzcanyavuz', target='_blank')
+                    img(src='http://www.plasticsuk.com/images/in-icon.png')
+                a.button(href='https://www.freecodecamp.com/yavuzovski', target='_blank')
+                    img(src='https://cdn-images-2.medium.com/fit/c/32/32/1*MotlWcSa2n6FrOx3ul89kw.png')

@@ -1,11 +1,12 @@
 const express = require('express');
 const searcher = require('./searcher.js');
 const dbController = require('./dbController.js');
-var router = express.Router();
+let router = express.Router();
 
 // main page router
 router.get('/', (req, res) => {
-    res.send("It works!");
+    let fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    res.render('index', { url: fullUrl });
 });
 
 // searcher router
