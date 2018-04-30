@@ -15,7 +15,7 @@ function parseResults(results) {
             context: result.image.contextLink
         };
         parsedResults.push(parsedResult);
-    })
+    });
     return Promise.resolve(parsedResults);
 }
 
@@ -38,11 +38,10 @@ function getSearchResults(query, offset) {
 }
 
 module.exports = function(query, offset) {
-    dbController.insertSearchQuery(query, (err, data) => {
-        if(err) throw err;
-        console.log("insert:", data);
+    dbController.insertSearchQuery(query).catch(err => {
+        throw err;
     });
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
         return resolve(getSearchResults(query, offset));
     });
-}
+};

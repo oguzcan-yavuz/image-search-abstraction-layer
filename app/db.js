@@ -14,16 +14,16 @@ const connectDB = (callback) => {
                 capped: true,
                 size: 513802240,
                 max: 10
-            })
+            });
             return callback(err);
         })
     } catch(e) {
         throw e;
     }
-}
+};
 
 const getDBObj = () => _dbObj;
 
-const disconnectDB = () => { _db.close(); }
+const disconnectDB = () => { _db.close(); };
 
 module.exports = { connectDB, getDBObj, disconnectDB };
